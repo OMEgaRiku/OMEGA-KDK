@@ -1,0 +1,18 @@
+{
+    "include": [
+        {
+            "keyboard": "omega",
+            "keymap": "vial",
+            "target": "uf2",
+            "flags": "EXTRAFLAGS=\"-DINIT_EE_HANDS_LEFT\"",
+            "name": "omega_vial_left"
+        },
+        {
+            "keyboard": "omega",
+            "keymap": "vial",
+            "target": "uf2",
+            "flags": "EXTRAFLAGS=\"-DINIT_EE_HANDS_RIGHT -DAUTO_KDK_TRACKBALL_ENABLED\"",
+            "name": "omega_vial_right"
+        }
+    ]
+}
