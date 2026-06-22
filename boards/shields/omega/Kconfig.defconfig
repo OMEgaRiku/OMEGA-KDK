@@ -1,0 +1,14 @@
+
+if SHIELD_OMEGA_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "omega"
+
+endif
+
+if SHIELD_OMEGA_LEFT || SHIELD_OMEGA_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
