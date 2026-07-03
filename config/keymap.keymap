@@ -8,7 +8,7 @@
         layer_0 {
             bindings = 
 &kp Q             &kp W  &kp E  &kp R  &kp T                                     &kp Y      &kp U  &kp I  &kp O  &kp P
-&kp A             &kp S  &kp D  &kp F  &kp G  &kp LANG_HIRAGANA  &kp INT_EISU    &kp H      &kp J  &kp K  &kp L  &kp DELETE
+&kp A              &kp S  &kp D  &kp F  &kp G  &none              &none         &kp H      &kp J  &kp K  &kp L  &kp DELETE
 &kp Z             &kp X  &kp C  &kp V  &kp B  &none              &none           &kp N      &kp M  &none  &none  &none
 &kp LEFT_CONTROL  &none  &none  &none  &none                                     &kp ENTER  &none                &none
             >;
