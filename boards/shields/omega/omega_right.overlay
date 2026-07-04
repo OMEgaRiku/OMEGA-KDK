@@ -47,17 +47,25 @@
             ;
     };
 
-    trackball_listener: trackball_listener {
+trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         
-        /* スクロールブロックを削除し、純粋な移動＋AMLのみに絞りました */
+        /* --- 通常時の動作：ポインタ移動 ＋ AML --- */
         input-processors = 
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 1 4>,
             <&zip_temp_layer 1 2000>;
+            
+        /* --- スクロールモード時の動作 --- */
+        scroll {
+            layers = <2>; /* 例としてレイヤー2をスクロール用に設定。お好みで変更してください */
+            input-processors = 
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_to_scroll_mapper>, /* ポインタ移動の信号をスクロール信号に変換 */
+                <&zip_scroll_scaler 1 4>;   /* スクロール速度の調整。遅くする場合は分母を増やす */
+        };
     };
-};
 
 /* 以降のハードウェア参照ノードも、すべてルートの外側にあります */
 &physical_layout0 {
