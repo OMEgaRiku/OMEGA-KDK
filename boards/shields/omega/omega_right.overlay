@@ -2,7 +2,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
-#include <mouse-gesture.dtsi>
 #include <scroll-snap.dtsi>
 
 /* 1. AMLの除外設定 */
@@ -10,36 +9,19 @@
     excluded-positions = < 18 19 >;
 };
 
-&zip_mouse_gesture {
-    stroke-size = <150>;  /* 1ストロークとして認識する移動量（環境に合わせて後で微調整します） */
-    enable-eager-mode;    /* パターンが一致したら即座にコマンドを実行する */
-    suppress-movement;    /* ジェスチャー入力中のカーソルのブレを防止する */
-
-    /* ここにジェスチャーを定義していきます */
-    gesture_1 {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>; /* L字（下から右） */
-        bindings = <&kp ENTER>;
-    };
-    
-    gesture_2 {
-        pattern = <GESTURE_UP GESTURE_DOWN>; /* 上下 */
-        bindings = <&kp LC(C)>; /* コピー */
-    };
-};
-
+/* 2. スクロールスナップのしきい値設定 */
 &zip_scroll_snap {
-    /* スナップを判定するためのサンプル数やしきい値（推奨デフォルト値） */
     x-threshold = <5 8>;
     y-threshold = <8 5>;
     xy-threshold = <5 8>;
-    require-n-samples = <10>;          /* 最初の10回の入力を見て方向を確定する */
-    immediate-snap-threshold = <1500>; /* 強く弾いた場合は即座にスナップする */
-    lock-duration-ms = <200>;          /* 一度ロックしたら、200msは別方向の入力を無視する */
+    require-n-samples = <10>;
+    immediate-snap-threshold = <1500>;
+    lock-duration-ms = <200>;
     lock-for-next-n-events = <10>;
     idle-reset-timeout-ms = <200>;
 };
 
-/* 2. メインのルートノード */
+/* 3. メインのルートノード */
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
@@ -83,20 +65,22 @@
         device = <&trackball>;
         
         /* --- 通常時の動作：ポインタ移動 ＋ AML --- */
-        input-processors = 
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_scaler 1 4>,
-            <&zip_temp_layer 1 2000>,
-            <&zip_mouse_gesture>;
+        /* ZMKの構文仕様に合わせ、配列のまとめ方を最適化しています */
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+            &zip_xy_scaler 1 4
+            &zip_temp_layer 1 2000
+        >;
             
         /* --- スクロールモード時の動作 --- */
         scroll {
             layers = <2>;
-            input-processors = 
-                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                <&zip_scroll_snap>,         /* ← 変換前の生データをここで軸ロック！ */
-                <&zip_xy_to_scroll_mapper>,
-                <&zip_scroll_scaler 1 8>;
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+                &zip_scroll_snap
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_scaler 1 8
+            >;
         };
     };
 };
