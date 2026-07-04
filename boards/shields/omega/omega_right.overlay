@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 
-/* 1. AMLの除外設定：絶対に「/ { ... };」の外側に書く必要があります */
+/* 1. AMLの除外設定 */
 &zip_temp_layer {
     excluded-positions = < 18 19 >;
 };
@@ -47,7 +47,7 @@
             ;
     };
 
-trackball_listener: trackball_listener {
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
         
@@ -59,15 +59,16 @@ trackball_listener: trackball_listener {
             
         /* --- スクロールモード時の動作 --- */
         scroll {
-            layers = <2>; /* 例としてレイヤー2をスクロール用に設定。お好みで変更してください */
+            layers = <2>;
             input-processors = 
                 <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                <&zip_xy_to_scroll_mapper>, /* ポインタ移動の信号をスクロール信号に変換 */
-                <&zip_scroll_scaler 1 4>;   /* スクロール速度の調整。遅くする場合は分母を増やす */
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_scaler 1 4>;
         };
     };
+};
 
-/* 以降のハードウェア参照ノードも、すべてルートの外側にあります */
+/* 以降のハードウェア参照ノード */
 &physical_layout0 {
     kscan = <&kscan0>;
     transform = <&default_transform>;
