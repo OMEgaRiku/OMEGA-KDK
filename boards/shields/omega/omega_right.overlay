@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 #include <mouse-gesture.dtsi>
+#include <scroll-snap.dtsi>
 
 /* 1. AMLの除外設定 */
 &zip_temp_layer {
@@ -24,6 +25,18 @@
         pattern = <GESTURE_UP GESTURE_DOWN>; /* 上下 */
         bindings = <&kp LC(C)>; /* コピー */
     };
+};
+
+&zip_scroll_snap {
+    /* スナップを判定するためのサンプル数やしきい値（推奨デフォルト値） */
+    x-threshold = <5 8>;
+    y-threshold = <8 5>;
+    xy-threshold = <5 8>;
+    require-n-samples = <10>;          /* 最初の10回の入力を見て方向を確定する */
+    immediate-snap-threshold = <1500>; /* 強く弾いた場合は即座にスナップする */
+    lock-duration-ms = <200>;          /* 一度ロックしたら、200msは別方向の入力を無視する */
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <200>;
 };
 
 /* 2. メインのルートノード */
@@ -81,6 +94,7 @@
             layers = <2>;
             input-processors = 
                 <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_scroll_snap>,         /* ← 変換前の生データをここで軸ロック！ */
                 <&zip_xy_to_scroll_mapper>,
                 <&zip_scroll_scaler 1 8>;
         };
