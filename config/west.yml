@@ -15,9 +15,13 @@ manifest:
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
-    - name: zmk-mouse-gesture   # ← このブロックを追加
+    - name: zmk-mouse-gesture 
       remote: kot149
       revision: v1
       path: modules/zmk-mouse-gesture
+    - name: zmk-scroll-snap
+      remote: kot149
+      revision: v1
+      path: modules/zmk-scroll-snap
   self:
     path: config
