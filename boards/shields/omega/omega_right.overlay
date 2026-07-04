@@ -40,13 +40,27 @@
             ,<&akdk_d 3 GPIO_ACTIVE_HIGH>
             ;
     };
-
-    trackball_listener: trackball_listener {
+&zip_temp_layer {
+    excluded-positions = < 18 19 >;
+};
+trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        /* --- 変更点：データの反転だけでなく、スケーラーを挟んで移動量を1/4に間引き、無線帯域の詰まりを解消する --- */
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-                           <&zip_xy_scaler 1 4>;
+        
+        /* --- 通常時の動作：移動 ＋ オートマウスレイヤー --- */
+        input-processors = 
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 1 4>,
+            <&zip_temp_layer 1 2000>; /* ボールが動いたらレイヤー1を2000ms有効化 */
+
+        /* --- スクロールモード時の動作（上書き） --- */
+        scroll {
+            layers = <2>; /* レイヤー2が有効な時だけ以下の処理に切り替わる */
+            input-processors = 
+                <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_scaler 1 4>,
+                <&zip_xy_to_scroll_mapper>, /* ← 移動信号をスクロール信号に変換 */
+                <&zip_scroll_scaler 1 2>;   /* スクロールが早すぎる場合はここで減速 */
     };
 };
 
