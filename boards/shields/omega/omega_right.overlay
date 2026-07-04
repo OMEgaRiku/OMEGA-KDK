@@ -9,15 +9,20 @@
     excluded-positions = < 18 19 >;
 };
 
-/* 2. スクロールスナップのしきい値設定 */
+/* 2. スクロールスナップのしきい値設定（超強力版に上書き） */
 &zip_scroll_snap {
-    x-threshold = <5 8>;
-    y-threshold = <8 5>;
-    xy-threshold = <5 8>;
-    require-n-samples = <10>;
-    immediate-snap-threshold = <1500>;
-    lock-duration-ms = <200>;
-    lock-for-next-n-events = <10>;
+    /* 45度未満のブレならすべて横（または縦）に強制吸着させる */
+    x-threshold = <1 1>;
+    y-threshold = <1 1>;
+    xy-threshold = <0 1>; /* 斜め判定を無効化 */
+    
+    /* 判定の慎重さ：最初の少しのブレを無視し、15サンプルの傾向で判断する */
+    require-n-samples = <15>;
+    immediate-snap-threshold = <2000>;
+    
+    /* ロックの持続力：一度方向が確定したら、指を止めるまで強力に維持する */
+    lock-duration-ms = <1000>;
+    lock-for-next-n-events = <50>;
     idle-reset-timeout-ms = <200>;
 };
 
@@ -77,9 +82,9 @@
             layers = <2>;
             input-processors = <
                 &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-                &zip_scroll_snap
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 1 8
+                &zip_scroll_snap
+                &zip_scroll_scaler 1 16
             >;
         };
     };
