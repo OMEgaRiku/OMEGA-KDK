@@ -4,6 +4,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: kot149       # ジェスチャー
+      url-base: https://github.com/kot149
+      
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +15,9 @@ manifest:
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-mouse-gesture   # ← このブロックを追加
+      remote: kot149
+      revision: v1
+      path: modules/zmk-mouse-gesture
   self:
     path: config
