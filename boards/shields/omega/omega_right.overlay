@@ -17,8 +17,8 @@
     xy-threshold = <0 1>; /* 斜め判定を無効化 */
     
     /* 判定の慎重さ：最初の少しのブレを無視し、5サンプルの傾向で判断する */
-    require-n-samples = <5>;
-    immediate-snap-threshold = <2000>;
+    require-n-samples = <3>;
+    immediate-snap-threshold = <1000>;
     
     /* ロックの持続力：一度方向が確定したら、指を止めるまで強力に維持する */
     lock-duration-ms = <1000>;
