@@ -1,26 +1,36 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        Bluetooth {
+            bindings = <&sl 4>;
+            key-positions = <0 1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&kp Q             &kp W     &kp E     &kp R    &kp T                                                     &kp Y      &kp U          &kp I  &kp O  &lt 6 P
-&kp A             &kp S     &kp D     &kp F    &kp G        &kp LANGUAGE_1        &kp LANGUAGE_2         &kp H      &kp J          &kp K  &kp L  &kp MINUS
-&lt 2 Z           &kp X     &kp C     &kp V    &kp B        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N      &kp M          &none  &none  &kp UNDER
-&kp LEFT_CONTROL  &kp LGUI  &kp LALT  &kp TAB  &lt 1 SPACE                                               &kp ENTER  &kp BACKSPACE                &kp RSHFT
+&kp Q             &kp W     &kp E     &kp R    &kp T                                                     &kp Y      &kp U          &kp I      &kp O       &lt 6 P
+&kp A             &kp S     &kp D     &kp F    &kp G        &kp LANGUAGE_1        &kp LANGUAGE_2         &kp H      &kp J          &kp K      &kp L       &kp MINUS
+&lt 2 Z           &kp X     &kp C     &kp V    &kp B        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp N      &kp M          &kp COMMA  &kp PERIOD  &kp NON_US_BACKSLASH
+&kp LEFT_CONTROL  &kp LGUI  &kp LALT  &kp TAB  &lt 1 SPACE                                               &kp ENTER  &kp BACKSPACE                         &kp RSHFT
             >;
         };
 
         layer_1 {
             bindings = <
-&kp N1           &kp N2  &kp N3  &kp N4  &kp N5                &kp N6    &kp N7    &kp N8    &kp N9     &kp N0
-&kp EXCLAMATION  &none   &none   &none   &none   &none  &none  &none     &kp LEFT  &kp UP    &kp RIGHT  &kp UNDER
-&none            &none   &none   &none   &none   &none  &none  &none     &none     &kp DOWN  &none      &none
-&none            &none   &none   &none   &none                 &mkp MB4  &mkp MB5                       &none
+&kp N1           &kp N2  &kp N3  &kp N4  &kp N5                &kp N6    &kp N7       &kp N8    &kp N9         &kp N0
+&kp EXCLAMATION  &none   &none   &none   &none   &none  &none  &none     &kp LEFT     &kp UP    &kp RIGHT      &kp UNDER
+&none            &none   &none   &none   &none   &none  &none  &none     &kp PAGE_UP  &kp DOWN  &kp PAGE_DOWN  &none
+&none            &none   &none   &none   &none                 &mkp MB4  &mkp MB5                              &none
             >;
         };
 
@@ -44,10 +54,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
+&trans  &trans  &trans  &trans  &trans                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &bt BT_CLR  &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans                      &trans        &trans                                    &trans
             >;
         };
 
