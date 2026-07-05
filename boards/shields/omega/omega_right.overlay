@@ -6,7 +6,7 @@
 
 /* 1. AMLの除外設定 */
 &zip_temp_layer {
-    excluded-positions = < 08 09 18 19 >;
+    excluded-positions = < 8 9 18 19 >;
 };
 
 /* 2. スクロールスナップのしきい値設定（超強力版に上書き） */
