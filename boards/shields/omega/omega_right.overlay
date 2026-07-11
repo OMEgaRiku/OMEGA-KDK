@@ -3,6 +3,10 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 #include <scroll-snap.dtsi>
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
 #include <mouse-gesture.dtsi> /* ←ジェスチャー用のヘッダーに変更 */
 
 /* 1. AMLの除外設定 */
@@ -110,7 +114,7 @@
             >;
         };
     };
-}; /* ←★この「ルートノードを閉じるカッコ」が抜けていました！ */
+}; 
 
 /* 以降のハードウェア参照ノード */
 &physical_layout0 {
