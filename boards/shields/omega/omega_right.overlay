@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 #include <scroll-snap.dtsi>
-#include <scroll-snap.dtsi
+#include <scroll-snap.dtsi>
 p
 /* 1. AMLの除外設定 */
 &zip_temp_layer {
