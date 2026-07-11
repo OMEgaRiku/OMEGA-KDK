@@ -3,10 +3,11 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 #include <scroll-snap.dtsi>
-
+#include <scroll-snap.dtsi
+p
 /* 1. AMLの除外設定 */
 &zip_temp_layer {
-    excluded-positions = < 8 9 18 19 >;
+    excluded-positions = < 18 19 >;
 };
 
 /* 2. スクロールスナップのしきい値設定（超強力版に上書き） */
@@ -24,6 +25,19 @@
     lock-duration-ms = <1000>;
     lock-for-next-n-events = <50>;
     idle-reset-timeout-ms = <200>;
+};
+
+/* ★ジェスチャーの設定（ルートの外側に配置） */
+&zip_mouse_gesture {
+    /* 1ストロークとして認識される移動量 */
+    stroke-size = <150>; 
+    idle-timeout-ms = <200>;
+
+    /* 例：右でEnter */
+    enter_gesture {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp ENTER>;
+    };
 };
 
 /* 3. メインのルートノード */
@@ -87,6 +101,14 @@
                 &zip_scroll_scaler 1 12
             >;
         };
+
+        /* ★--- ジェスチャーモード時の動作 (Layer 7) ---★ */
+        gesture {
+            layers = <7>; /* Layer 7がアクティブな時だけジェスチャーを有効化 */
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) /* センサーの向きに合わせる */
+                &zip_mouse_gesture
+            >;
     };
 };
 
