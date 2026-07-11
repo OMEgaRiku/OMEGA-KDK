@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "layouts.dtsi"
 #include <scroll-snap.dtsi>
-#include <scroll-snap.dtsi>
-p
+#include <mouse-gesture.dtsi> /* ←ジェスチャー用のヘッダーに変更 */
+
 /* 1. AMLの除外設定 */
 &zip_temp_layer {
     excluded-positions = < 18 19 >;
@@ -84,7 +84,6 @@ p
         device = <&trackball>;
         
         /* --- 通常時の動作：ポインタ移動 ＋ AML --- */
-        /* ZMKの構文仕様に合わせ、配列のまとめ方を最適化しています */
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             &zip_xy_scaler 1 4
@@ -109,8 +108,9 @@ p
                 &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) /* センサーの向きに合わせる */
                 &zip_mouse_gesture
             >;
+        };
     };
-};
+}; /* ←★この「ルートノードを閉じるカッコ」が抜けていました！ */
 
 /* 以降のハードウェア参照ノード */
 &physical_layout0 {
