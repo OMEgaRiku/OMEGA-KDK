@@ -180,3 +180,15 @@
         };
     };
 };
+
+&zip_mouse_gesture {
+    /* 1ストロークとして認識される移動量 */
+    stroke-size = <150>; 
+    idle-timeout-ms = <200>;
+
+    /* 例：右でEnter */
+    enter_gesture {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp ENTER>;
+    };
+};
