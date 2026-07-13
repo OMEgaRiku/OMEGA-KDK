@@ -28,10 +28,10 @@
 
         layer_1 {
             bindings = <
-&kp N1        &kp N2            &kp N3         &kp N4            &kp N5                                                 &kp N6            &kp N7         &kp N8      &kp N9      &kp N0
-&kp LS(EXCL)  &kp LS(NUMBER_2)  &kp LS(POUND)  &kp LS(DLLR)      &kp LS(PRCNT)      &kp PAGE_UP      &kp PAGE_DOWN      &kp LS(NUMBER_6)  &kp LS(N7)     &kp LS(N8)  &kp LS(N9)  &kp MINUS
-&kp QUESTION  &none             &none          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp COLON      &kp COMMA   &kp PERIOD  &kp AT_SIGN
-&none         &none             &none          &none             &none                                                  &kp ENTER         &kp BACKSPACE                          &kp SLASH
+&kp N1        &kp N2            &kp N3                &kp N4            &kp N5                                                 &kp N6            &kp N7         &kp N8      &kp N9      &kp N0
+&kp LS(EXCL)  &kp LS(NUMBER_2)  &kp LS(POUND)         &kp LS(DLLR)      &kp LS(PRCNT)      &kp PAGE_UP      &kp PAGE_DOWN      &kp LS(NUMBER_6)  &kp LS(N7)     &kp LS(N8)  &kp LS(N9)  &kp MINUS
+&kp QUESTION  &kp SLASH         &kp NON_US_BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp COLON      &kp COMMA   &kp PERIOD  &kp AT_SIGN
+&none         &none             &none                 &none             &none                                                  &kp ENTER         &kp BACKSPACE                          &kp RIGHT_SHIFT
             >;
         };
 
@@ -183,10 +183,12 @@
 
 &zip_mouse_gesture {
     /* 1ストロークとして認識される移動量 */
-    stroke-size = <150>; 
+
+    stroke-size = <150>;
     idle-timeout-ms = <200>;
 
     /* 例：右でEnter */
+
     enter_gesture {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp ENTER>;
