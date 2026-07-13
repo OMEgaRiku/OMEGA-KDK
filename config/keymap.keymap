@@ -46,10 +46,10 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE  &none  &none  &none     &none                     &none            &none      &none      &none             &kp DELETE
-&none       &none  &none  &none     &none    &none  &none     &kp LEFT         &kp UP     &kp RIGHT  &none             &none
-&none       &none  &none  &none     &none    &none  &kp LEFT  &kp DOWN         &kp RIGHT  &none      &kp LEFT_CONTROL  &none
-&none       &none  &none  &kp HOME  &kp END                   &kp RIGHT_SHIFT
+&kp ESCAPE  &none  &none  &none     &none                                         &none  &none     &none     &none      &kp DELETE
+&none       &none  &none  &none     &none     &none  &none                 &none  &kp LEFT  &kp UP    &kp RIGHT  &none
+&none       &none  &none  &none     &none     &none  &none                 &none  &none     &kp DOWN  &none      &kp LEFT_CONTROL
+&none       &none  &none  &kp HOME  &kp END                                         &none  &none     &kp RIGHT_SHIFT
             >;
         };
 
@@ -188,15 +188,15 @@
 
     always-active;
 
-/* 右ジェスチャー：Shift + Page Down */
+/* 右ジェスチャー：Ctrl + Page Down */
     gesture_right {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LS(PAGE_DOWN)>;
+        bindings = <&kp LC(PAGE_DOWN)>;
     };
 
-    /* 左ジェスチャー：Shift + Page Up */
+    /* 左ジェスチャー：Ctrl + Page Up */
     gesture_left {
         pattern = <GESTURE_LEFT>;
-        bindings = <&kp LS(PAGE_UP)>;
+        bindings = <&kp LC(PAGE_UP)>;
     };
 };
