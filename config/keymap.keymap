@@ -182,7 +182,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <50>;
+    stroke-size = <10>;
     idle-timeout-ms = <200>;
     always-active;
 
