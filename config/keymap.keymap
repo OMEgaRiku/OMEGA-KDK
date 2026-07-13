@@ -196,6 +196,6 @@
 
     enter_gesture {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp ENTER>;
+        bindings = <&kp TAB>;
     };
 };
