@@ -183,7 +183,7 @@
 
 &zip_mouse_gesture {
     stroke-size = <10>;
-    idle-timeout-ms = <200>;
+    idle-timeout-ms = <30>;
     always-active;
 
     /* 右ジェスチャー：Ctrl + Page Down */
