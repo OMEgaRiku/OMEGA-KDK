@@ -182,19 +182,21 @@
 };
 
 &zip_mouse_gesture {
-    /* ★変更：感度が高すぎたので150から50に落としました */
 
     stroke-size = <50>;
     idle-timeout-ms = <200>;
 
-    /* ★追加：これがないとモジュールが待機状態のままになり監視がスタートしません */
-
     always-active;
 
-    /* 例：右でTAB */
-
-    enter_gesture {
+/* 右ジェスチャー：Shift + Page Down */
+    gesture_right {
         pattern = <GESTURE_RIGHT>;
-        bindings = <&kp TAB>;
+        bindings = <&kp LS(PAGE_DOWN)>;
+    };
+
+    /* 左ジェスチャー：Shift + Page Up */
+    gesture_left {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LS(PAGE_UP)>;
     };
 };
