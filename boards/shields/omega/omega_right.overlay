@@ -80,12 +80,12 @@
             >;
         };
 
-        /* ★ジェスチャーを呼び出す設定だけ残す */
         gesture {
             layers = <7>;
             input-processors = <
                 &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
                 &zip_mouse_gesture
+                &zip_xy_scaler 0 1 /* ★追加：ジェスチャー中のポインタ移動を無効化 */
             >;
         };
     };
