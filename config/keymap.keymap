@@ -30,7 +30,7 @@
             bindings = <
 &kp N1        &kp N2            &kp N3                &kp N4            &kp N5                                                 &kp N6            &kp N7         &kp N8      &kp N9      &kp N0
 &kp LS(EXCL)  &kp LS(NUMBER_2)  &kp LS(POUND)         &kp LS(DLLR)      &kp LS(PRCNT)      &kp PAGE_UP      &kp PAGE_DOWN      &kp LS(NUMBER_6)  &kp LS(N7)     &kp LS(N8)  &kp LS(N9)  &kp MINUS
-&kp QUESTION  &kp SLASH         &kp NON_US_BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp COLON      &kp COMMA   &kp PERIOD  &kp AT_SIGN
+&kp QUESTION  &kp SLASH         &kp NON_US_BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp COLON      &kp COMMA   &kp PERIOD  &kp AT
 &none         &none             &none                 &none             &none                                                  &kp ENTER         &kp BACKSPACE                          &kp RIGHT_SHIFT
             >;
         };
@@ -46,10 +46,10 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE  &none  &none  &none     &none                                         &none  &none     &none     &none      &kp DELETE
-&none       &none  &none  &none     &none     &none  &none                 &none  &kp LEFT  &kp UP    &kp RIGHT  &none
-&none       &none  &none  &none     &none     &none  &none                 &none  &none     &kp DOWN  &none      &kp LEFT_CONTROL
-&none       &none  &none  &kp HOME  &kp END                                         &none  &none     &kp RIGHT_SHIFT
+&kp ESCAPE        &none  &none  &none  &none                &none     &none     &none     &none      &kp DELETE
+&none             &none  &none  &none  &none  &none  &none  &none     &kp LEFT  &kp UP    &kp RIGHT  &none
+&none             &none  &none  &none  &none  &none  &none  &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
+&kp LEFT_CONTROL  &none  &none  &none  &none                &kp HOME  &kp END                        &kp RIGHT_SHIFT
             >;
         };
 
@@ -182,19 +182,19 @@
 };
 
 &zip_mouse_gesture {
-
     stroke-size = <50>;
     idle-timeout-ms = <200>;
-
     always-active;
 
-/* 右ジェスチャー：Ctrl + Page Down */
+    /* 右ジェスチャー：Ctrl + Page Down */
+
     gesture_right {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp LC(PAGE_DOWN)>;
     };
 
     /* 左ジェスチャー：Ctrl + Page Up */
+
     gesture_left {
         pattern = <GESTURE_LEFT>;
         bindings = <&kp LC(PAGE_UP)>;
