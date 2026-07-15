@@ -199,4 +199,16 @@
         pattern = <GESTURE_LEFT>;
         bindings = <&kp LC(PAGE_UP)>;
     };
+
+    /* 下: タブを閉じる */
+    gesture_down {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(W)>;
+    };
+
+    /* 上: 新規タブを開く */
+    gesture_up {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(T)>; 
+    };
 };
