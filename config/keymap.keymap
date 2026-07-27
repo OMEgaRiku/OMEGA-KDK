@@ -21,7 +21,7 @@
             bindings = <
 &kp Q             &kp W     &kp E     &kp R      &kp T                                   &kp Y      &kp U          &kp I      &kp O       &lt 6 P
 &kp A             &kp S     &kp D     &kp F      &kp G        &none        &none         &kp H      &kp J          &kp K      &kp L       &lt 7 MINUS
-&lt 2 Z           &kp X     &kp C     &kp V      &kp B        &lt 9 LANG1  &lt 10 LANG2  &kp N      &kp M          &kp COMMA  &kp PERIOD  &kp LS(INTERNATIONAL_1)
+&lt 2 Z           &kp X     &kp C     &kp V      &kp B        &lt 9 LANG1  &lt 10 LANG2  &kp N      &kp M          &kp COMMA  &kp PERIOD  &lt 8 LS(INTERNATIONAL_1)
 &kp LEFT_CONTROL  &kp LGUI  &kp LALT  &lt 3 TAB  &lt 1 SPACE                             &kp ENTER  &kp BACKSPACE                         &kp RSHFT
             >;
         };
@@ -31,7 +31,7 @@
 &kp N1        &kp N2            &kp N3                &kp N4             &kp N5                                             &kp N6            &kp N7         &kp N8      &kp N9      &kp N0
 &kp LS(EXCL)  &kp LS(NUMBER_2)  &kp LS(POUND)         &kp LS(DLLR)       &kp LS(PRCNT)  &kp PAGE_UP      &kp PAGE_DOWN      &kp LS(NUMBER_6)  &kp LS(N7)     &kp LS(N8)  &kp LS(N9)  &kp MINUS
 &kp QUESTION  &kp SLASH         &kp NON_US_BACKSLASH  &kp RIGHT_BRACKET  &kp BSLH       &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp SQT        &kp COMMA   &kp PERIOD  &kp LEFT_BRACKET
-&none         &none             &none                 &none              &none                                              &kp ENTER         &kp BACKSPACE                          &kp RIGHT_SHIFT
+&none         &none             &none                 &none              &none                                              &kp RS(ENTER)     &kp BACKSPACE                          &kp RIGHT_SHIFT
             >;
         };
 
@@ -46,10 +46,10 @@
 
         layer_3 {
             bindings = <
-&kp ESCAPE        &none  &none  &none  &none                &none     &none     &none     &none      &kp DELETE
-&none             &none  &none  &none  &none  &none  &none  &none     &kp LEFT  &kp UP    &kp RIGHT  &none
-&none             &none  &none  &none  &none  &none  &none  &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
-&kp LEFT_CONTROL  &none  &none  &none  &none                &kp HOME  &kp END                        &kp RIGHT_SHIFT
+&kp ESCAPE        &none                   &none                 &none                    &none                &none     &none     &none     &none      &kp DELETE
+&none             &kp LS(LC(LEFT_ARROW))  &kp LS(LC(UP_ARROW))  &kp LS(LC(RIGHT))        &none  &none  &none  &none     &kp LEFT  &kp UP    &kp RIGHT  &none
+&none             &kp LS(LC(LEFT_ARROW))  &kp LS(LC(DOWN))      &kp LS(LC(RIGHT_ARROW))  &none  &none  &none  &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
+&kp LEFT_CONTROL  &none                   &none                 &none                    &none                &kp HOME  &kp END                        &kp RIGHT_SHIFT
             >;
         };
 
@@ -64,10 +64,10 @@
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                      &trans
+&trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &mkp MB1   &mkp MB2  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &kp LANG1  &kp LANG2                    &trans
             >;
         };
 
@@ -133,51 +133,6 @@
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
             >;
         };
-
-        layer_13 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
-            >;
-        };
-
-        layer_14 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
-            >;
-        };
-
-        layer_15 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
-            >;
-        };
-
-        layer_16 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
-            >;
-        };
-
-        layer_17 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
-            >;
-        };
     };
 };
 
@@ -201,14 +156,16 @@
     };
 
     /* 下: タブを閉じる */
+
     gesture_down {
         pattern = <GESTURE_DOWN>;
         bindings = <&kp LC(W)>;
     };
 
     /* 上: 新規タブを開く */
+
     gesture_up {
         pattern = <GESTURE_UP>;
-        bindings = <&kp LC(T)>; 
+        bindings = <&kp LC(T)>;
     };
 };
