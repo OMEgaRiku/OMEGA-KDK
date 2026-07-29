@@ -4,9 +4,9 @@
 #include "layouts.dtsi"
 #include <scroll-snap.dtsi>
 
-/* 1. AMLの除外設定 */
+/* 1. AMLの除外設定 J,K,Enter,Bk */
 &zip_temp_layer {
-    excluded-positions = < 18 19 >;
+    excluded-positions = < 18 19 41 42>;
 };
 
 /* 2. スクロールスナップのしきい値設定（超強力版に上書き） */
