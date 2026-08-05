@@ -28,19 +28,19 @@
 
         layer_1 {
             bindings = <
-&kp N1        &kp N2            &kp N3                &kp N4             &kp N5                                             &kp N6            &kp N7         &kp N8      &kp N9      &kp N0
-&kp LS(EXCL)  &kp LS(NUMBER_2)  &kp LS(POUND)         &kp LS(DLLR)       &kp LS(PRCNT)  &kp PAGE_UP      &kp PAGE_DOWN      &kp LS(NUMBER_6)  &kp LS(N7)     &kp LS(N8)  &kp LS(N9)  &kp MINUS
-&kp QUESTION  &kp SLASH         &kp NON_US_BACKSLASH  &kp RIGHT_BRACKET  &kp BSLH       &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp SQT        &kp COMMA   &kp PERIOD  &kp LEFT_BRACKET
-&none         &none             &none                 &none              &none                                              &kp RS(ENTER)     &kp BACKSPACE                          &kp RIGHT_SHIFT
+&kp N1        &kp N2            &kp N3               &kp N4             &kp N5                                             &kp N6            &kp N7         &kp N8      &kp N9      &kp N0
+&kp LS(EXCL)  &kp LS(NUMBER_2)  &kp LS(POUND)        &kp LS(DLLR)       &kp LS(PRCNT)  &kp PAGE_UP      &kp PAGE_DOWN      &kp LS(NUMBER_6)  &kp LS(N7)     &kp LS(N8)  &kp LS(N9)  &kp MINUS
+&kp QUESTION  &kp SLASH         &kp INTERNATIONAL_1  &kp RIGHT_BRACKET  &kp BSLH       &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &kp SEMICOLON     &kp SQT        &kp COMMA   &kp PERIOD  &kp LEFT_BRACKET
+&none         &none             &none                &none              &none                                              &kp RS(ENTER)     &kp BACKSPACE                          &kp RIGHT_SHIFT
             >;
         };
 
         layer_2 {
             bindings = <
-&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                                       &kp F6    &kp F7        &kp F8            &kp F9         &kp F10
-&kp F11  &kp F12  &none   &none   &none   &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &none     &kp LG(LEFT)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &none
-&none    &none    &none   &none   &none   &none             &none              &none     &none         &kp LG(DOWN)      &none          &none
-&none    &none    &none   &none   &none                                        &mkp MB4  &mkp MB5                                       &kp LG(LS(S))
+&kp F1   &kp F2      &kp F3      &kp F4      &kp F5                                           &kp F6      &kp F7        &kp F8            &kp F9         &kp F10
+&kp F11  &kp F12     &none       &none       &none       &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &none       &kp LG(LEFT)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &none
+&none    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &none             &none              &kp LG(N5)  &none         &kp LG(DOWN)      &none          &none
+&none    &none       &none       &none       &none                                            &mkp MB4    &mkp MB5                                       &kp LG(LS(S))
             >;
         };
 
