@@ -10,7 +10,7 @@
 
         Bluetooth {
             bindings = <&sl 4>;
-            key-positions = <0 1 2>;
+            key-positions = <0 1>;
         };
     };
 
@@ -48,7 +48,7 @@
             bindings = <
 &kp ESCAPE        &none                   &none                 &none                    &none                &none     &none     &none     &none      &kp DELETE
 &none             &kp LS(LC(LEFT_ARROW))  &kp LS(LC(UP_ARROW))  &kp LS(LC(RIGHT))        &none  &none  &none  &none     &kp LEFT  &kp UP    &kp RIGHT  &none
-&none             &kp LS(LC(LEFT_ARROW))  &kp LS(LC(DOWN))      &kp LS(LC(RIGHT_ARROW))  &none  &none  &none  &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
+&kp LEFT_SHIFT    &kp LS(LC(LEFT_ARROW))  &kp LS(LC(DOWN))      &kp LS(LC(RIGHT_ARROW))  &none  &none  &none  &none     &kp LEFT  &kp DOWN  &kp RIGHT  &none
 &kp LEFT_CONTROL  &none                   &none                 &none                    &none                &kp HOME  &kp END                        &kp RIGHT_SHIFT
             >;
         };
