@@ -73,10 +73,10 @@
 
         layer_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &trans  &trans                  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RC(C)  &kp RA(V)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans                        &trans
             >;
         };
 
