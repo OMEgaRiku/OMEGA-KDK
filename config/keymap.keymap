@@ -16,11 +16,9 @@
 
     behaviors {
         // 標準のHold-Tap全般の長押し判定時間を変更（例: 150msに設定）
-        hold_tap: hold_tap {
-            tapping-term-ms = <150>;
-        };
-    };
 
+        hold_tap: hold_tap { tapping-term-ms = <150>; };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -82,7 +80,7 @@
         layer_6 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans     &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RC(C)  &kp RA(V)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp RC(C)  &kp RC(V)  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans                        &trans
             >;
