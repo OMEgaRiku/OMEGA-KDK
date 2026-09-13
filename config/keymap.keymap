@@ -14,6 +14,14 @@
         };
     };
 
+    behaviors {
+        // 標準のHold-Tap全般の長押し判定時間を変更（例: 150msに設定）
+        hold_tap: hold_tap {
+            tapping-term-ms = <150>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
