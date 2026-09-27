@@ -5,14 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        Bluetooth {
-            bindings = <&sl 4>;
-            key-positions = <0 1>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         // 標準のHold-Tap全般の長押し判定時間を変更（例: 150msに設定）
@@ -27,7 +20,7 @@
             bindings = <
 &kp Q             &kp W     &kp E     &kp R      &kp T                                      &kp Y      &kp U          &kp I      &kp O       &lt 6 P
 &kp A             &kp S     &kp D     &kp F      &kp G        &kp LEFT_SHIFT  &none         &kp H      &kp J          &kp K      &kp L       &lt 7 MINUS
-&lt 2 Z           &kp X     &kp C     &kp V      &kp B        &lt 9 LANG1     &lt 10 LANG2  &kp N      &kp M          &kp COMMA  &kp PERIOD  &lt 8 LS(INTERNATIONAL_1)
+&lt 2 Z           &kp X     &kp C     &kp V      &kp B        &lt 4 LANG1     &lt 10 LANG2  &kp N      &kp M          &kp COMMA  &kp PERIOD  &lt 8 LS(INTERNATIONAL_1)
 &kp LEFT_CONTROL  &kp LGUI  &kp LALT  &lt 3 TAB  &lt 1 SPACE                                &kp ENTER  &kp BACKSPACE                         &kp RSHFT
             >;
         };
@@ -43,10 +36,10 @@
 
         layer_2 {
             bindings = <
-&kp F1   &kp F2      &kp F3      &kp F4      &kp F5                                           &kp F6      &kp F7        &kp F8            &kp F9         &kp F10
-&kp F11  &kp F12     &none       &none       &none       &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &none       &kp LG(LEFT)  &kp LG(UP_ARROW)  &kp LG(RIGHT)  &none
-&none    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &none             &none              &kp LG(N5)  &none         &kp LG(DOWN)      &none          &none
-&none    &none       &none       &none       &none                                            &mkp MB4    &mkp MB5                                       &kp LG(LS(S))
+&kp F1   &kp F2      &kp F3      &kp F4      &kp F5                                           &kp F6      &kp F7            &kp F8            &kp F9         &kp F10
+&kp F11  &kp F12     &none       &none       &none       &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &none       &kp LG(LEFT)      &kp LG(UP_ARROW)  &kp LG(RIGHT)  &none
+&none    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &none             &none              &kp LG(N5)  &kp LG(NUMBER_6)  &kp LG(DOWN)      &none          &none
+&none    &none       &none       &none       &none                                            &mkp MB4    &mkp MB5                                           &kp LG(LS(S))
             >;
         };
 
@@ -70,10 +63,10 @@
 
         layer_5 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                  &trans     &trans     &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &mkp MB1   &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans                  &kp LANG1  &kp LANG2                    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans                  &none   &none                       &trans
             >;
         };
 
