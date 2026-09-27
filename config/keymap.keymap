@@ -8,9 +8,9 @@
     combos { compatible = "zmk,combos"; };
 
     behaviors {
-        // 標準のHold-Tap全般の長押し判定時間を変更（例: 150msに設定）
+        // 標準のHold-Tap全般の長押し判定時間を変更（例: 100msに設定）
 
-        hold_tap: hold_tap { tapping-term-ms = <150>; };
+        hold_tap: hold_tap { tapping-term-ms = <100>; };
     };
 
     keymap {
